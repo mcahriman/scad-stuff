@@ -1,4 +1,4 @@
-module latch( base_width=5, base_height=10, latch_height=5, latch_angle=10, latch_width=15)
+module latch( base_width=5, latch_width=15, base_height=10, latch_height=5, latch_angle=10)
 {
     //here we draw 2d latch using parameters
     dots = [
@@ -18,11 +18,13 @@ module latch( base_width=5, base_height=10, latch_height=5, latch_angle=10, latc
         //simplest ever trigonomtry is used here
         //width of the latch itself is it's
         //height times sin(it's angle in degrees)
-        [ -base_height*sin(latch_angle),base_height ],
+        [ -latch_height*sin(latch_angle),base_height ],
         // corner
         [ 0,base_height]
     ];
     //extrude it to desired latch width
+    translate([-latch_width/2,0,0])
+    rotate([90,0,90])
     linear_extrude(latch_width)
         polygon(dots);
 }
