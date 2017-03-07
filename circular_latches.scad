@@ -14,15 +14,14 @@ module circular_latches(radius=50, count=6, arc=360,  base_width=5, latch_width=
 #union(){
     circular_latches(radius=15.5/2, base_width=2, latch_width=3, base_height=8, latch_height=2, latch_angle=40);
     rotate([0,180,0])
-    cylinder(d1=15.5+4,d2 =5, h=5);
+    cylinder(d1=15.5+4,d2 =15, h=5);
     cylinder(d=15.5+4,h=1);
     translate([0,0,-5])
     rotate([90,0,0])
     difference() {    
         cylinder(d=3,h=1);
         translate([0,0,-0.5])
-        cylinder(d=1,h=2);
+        cylinder(d=1.5,h=2);
     }
 
-    
 }
