@@ -5,7 +5,7 @@ module stepper() {
 }
 
 module bottom_pad() {
-cylinder(d=70, h=2);
+cylinder(d=70, h=2, $fn=100);
 cylinder(d=12,h=3);
 difference() {
     
@@ -20,7 +20,7 @@ module rotor() {
     difference() {
         union() {
             difference(){
-                cylinder(d=70, h=3);
+                cylinder(d=70, h=3, $fn=100);
             }
             difference() {
                 //bearing holder
@@ -46,8 +46,11 @@ module rotor() {
         for(i=[0:30:360]) { 
             
           rotate([0,0,i])
-          translate([0,30,0])
+          translate([0,30,0]) {
+          translate([0,0,2])
+          cylinder(d=4.5,h=1, $fn=50);
           cylinder(d=3.3,h=4, $fn=50);
+          }
         }
     }
     
