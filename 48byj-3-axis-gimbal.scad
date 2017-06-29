@@ -122,6 +122,15 @@ module pitch_motor_support() {
     translate([-37,support_height+3,-71])
     cube([74,3,74]);
 }
+
 translate([0,53,53])
 rotate([-90,0,0])
 pitch_motor_support(); 
+
+translate([0,-17,64])
+rotate([-90,0,0]) {
+#support_plane(60);
+   translate([-18,60+4,10])
+            rotate([180,90,0])
+            support_rib();
+}
